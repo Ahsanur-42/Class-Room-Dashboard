@@ -3,7 +3,7 @@ function loadStudentData() {
   const studentData = JSON.parse(localStorage.getItem("students")) || [];
   const studentTableBody = document.getElementById("student-table-body");
 
-  studentTableBody.innerHTML = ""; // Clear the existing rows
+  studentTableBody.innerHTML = ""; 
 
   studentData.forEach((student, index) => {
     const newRow = document.createElement("tr");
@@ -33,7 +33,7 @@ function toggleRemoveButtonVisibility() {
   const checkboxes = document.querySelectorAll(".student-checkbox");
   const removeButton = document.getElementById("remove-selected-btn");
   const isAnyChecked = Array.from(checkboxes).some((checkbox) => checkbox.checked);
-  removeButton.style.display = isAnyChecked ? "block" : "none"; // Show button only if a checkbox is checked
+  removeButton.style.display = isAnyChecked ? "block" : "none"; 
 }
 
 // Function to remove selected students
@@ -49,7 +49,7 @@ function removeSelectedStudents() {
   );
 
   localStorage.setItem("students", JSON.stringify(updatedData));
-  loadStudentData(); // Reload the data after removal
+  loadStudentData(); 
 }
 
 // Event handlers for the Add Student Form
@@ -197,14 +197,14 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const noticeText = document.getElementById("notice-text").value;
     alert(`Notice Posted: ${noticeText}`);
-    document.getElementById("notice-text").value = ""; // Reset the form
+    document.getElementById("notice-text").value = ""; 
   });
 
   document.getElementById("message-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const messageText = document.getElementById("message-text").value;
     alert(`Message Sent: ${messageText}`);
-    document.getElementById("message-text").value = ""; // Reset the form
+    document.getElementById("message-text").value = ""; 
   });
 });
 
@@ -259,7 +259,7 @@ document.getElementById("show-all-messages").addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const profileNameElement = document.getElementById("profile-name");
   const greeting = getGreeting();
-  const userName = "Ahsanur"; // Replace with dynamic user name if needed
+  const userName = "Ahsanur"; 
   profileNameElement.textContent = `${greeting}, ${userName}!`;
 
   function getGreeting() {
